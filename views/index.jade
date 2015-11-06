@@ -1,0 +1,34 @@
+extends layout
+
+block content
+	div(ng-controller="ToDoCtrl" layout="column" ng-cloak)
+		md-toolbar
+			div.md-toolbar-tools
+				h2.md-flex= title
+		md-content(flex layout-padding=20)
+			div(flex)
+				h2 ToDo remains: {{todos.length}} items
+				md-list
+					md-list-item.md-3-line(ng-repeat="todo in todos")
+						p {{todo.name}}
+						p {{todo.desc}}
+						div(flex="25")
+							md-slider(flex md-discrete ng-model="todo.done" min="0" max="100" step="10" aria-label="done")
+							{{todo.done | percentage}}
+						div(flex="25")
+							center(ng-show="todo.done==100") [ <a href="" ng-click="remove($index)">Remove</a> ]
+			div(flex)
+				h2 Add ToDo
+				form(ng-submit="addToDo()" name="frmAddToDo")
+					md-input-container.md-block
+						label name
+						input(md-minlength="5" required name="name" ng-model="ToDoName")
+						div(ng-messages="frmAddToDo.name.$error")
+					md-input-container.md-block
+						label description
+						input(md-minlength="20" required name="description" ng-model="ToDoDesc")
+						div(ng-messages="frmAddToDo.description.$error")
+					md-input-container.md-block
+						md-button.md-raised.md-primary(ng-disabled="frmAddToDo.$invalid") Submit
+	script(src='/js/index.js')
+			

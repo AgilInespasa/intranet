@@ -1,0 +1,29 @@
+{
+  "name": "intranet",
+  "version": "1.0.0",
+  "description": "The inespasa's Intranet AngularJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgilInespasa/intranet"
+  },
+  "keywords": [
+    "intranet",
+    "inespasa",
+    "angularjs"
+  ],
+  "author": "Antonio Gil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgilInespasa/intranet/issues"
+  },
+  "homepage": "https://github.com/AgilInespasa/intranet",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
+}
