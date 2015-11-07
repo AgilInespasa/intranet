@@ -22,6 +22,10 @@ app.get('/produccion', function(req, res, next) {
 	res.render('/produccion', {title: 'Busqueda de documentacion'});
 });
 
+app.get('/test' , function(req, res, next) {
+	res.render('test', {title:'AngularJS Test'});
+});
+
 var port = process.env.PORT || 3000;
 
 app.listen(port);
